@@ -1,4 +1,7 @@
 <script setup>
+definePageMeta({
+  layout: "users",
+});
 const { userId } = useRoute().params;
 </script>
 

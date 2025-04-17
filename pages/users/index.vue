@@ -1,17 +1,13 @@
 <script>
-export default {
-  data() {
-    return {
-      some: "info",
-    };
-  },
-};
+definePageMeta({
+  layout: "users",
+});
 </script>
 
 <template>
   <div>
     <h1>All users</h1>
-    <p>{{ some }}</p>
+
     <!-- <NuxtRouteAnnouncer /> -->
     <!-- <NuxtWelcome /> -->
   </div>
