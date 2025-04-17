@@ -3,15 +3,52 @@ definePageMeta({
   layout: "users",
 });
 const { userId } = useRoute().params;
+
+const { data } = await useFetch(`https://dummyjson.com/users/${userId}`);
 </script>
 
 <template>
-  <div>
-    <h1>ID of user: {{ userId }}</h1>
+  <h1 class="text-danger mb-4">ID of user: {{ userId }}</h1>
+  <Row align-items="center" justify-content="center" gutter="x-3">
+    <Col col="md-5">
+      <Card
+        data-aos="fade-up"
+        background-color="primary-subtle"
+        border-subtractive
+        text-alignment="center"
+        shadow
+      >
+        <CardBody>
+          <Row align-items="center" justify-content="center" gutter="x-5">
+            <Col col="md-11">
+              <h3>User photo</h3>
+              <b-img fluid rounded :src="data.image" alt="Image Description" />
+            </Col>
+          </Row>
+        </CardBody>
+      </Card>
+    </Col>
 
-    <!-- <NuxtRouteAnnouncer /> -->
-    <!-- <NuxtWelcome /> -->
-  </div>
+    <Col col="md-5">
+      <h2>{{ data.firstName }} {{ data.lastName }}</h2>
+      <p>ID: {{ data.id }} | Age: {{ data.age }}</p>
+
+      <List unstyled font-size="4">
+        <ListItem><strong>Email:</strong> {{ data.email }} </ListItem>
+        <ListItem><strong>Phone:</strong> {{ data.phone }} </ListItem>
+        <ListItem
+          ><strong>Address:</strong> {{ data.address.address }},{{
+            data.address.city
+          }},{{ data.address.state }}
+        </ListItem>
+        <ListItem
+          ><strong>Company:</strong> {{ data.company.name }} -
+          {{ data.company.title }}
+          <p>Department: {{ data.company.department }}</p>
+        </ListItem>
+      </List>
+    </Col>
+  </Row>
 </template>
 
 <style>
