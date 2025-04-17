@@ -1,17 +1,8 @@
-<script>
-export default {
-  data() {
-    return {
-      some: "info",
-    };
-  },
-};
-</script>
+<script></script>
 
 <template>
   <div>
     <h1>Contacts!!!</h1>
-    <p>{{ some }}</p>
     <!-- <NuxtRouteAnnouncer /> -->
     <!-- <NuxtWelcome /> -->
   </div>

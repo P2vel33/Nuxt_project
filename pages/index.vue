@@ -1,12 +1,4 @@
-<script>
-export default {
-  data() {
-    return {
-      some: "info",
-    };
-  },
-};
-</script>
+<script></script>
 
 <template>
   <div>
@@ -18,7 +10,7 @@ export default {
       </ul>
     </header>
     <h1>Home page!</h1>
-    <p>{{ some }}</p>
+    <Alert color="primary"> A simple primary alert—check it out! </Alert>
     <!-- <NuxtRouteAnnouncer /> -->
     <!-- <NuxtWelcome /> -->
   </div>
