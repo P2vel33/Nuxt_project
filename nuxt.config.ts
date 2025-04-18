@@ -2,7 +2,21 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["usebootstrap"],
+  modules: [
+    "usebootstrap",
+    [
+      "nuxt-mail",
+      {
+        message: {
+          to: "vespoladra@gufum.com",
+        },
+        smtp: {
+          host: "fudromomla@gufum.com",
+          port: 587,
+        },
+      },
+    ],
+  ],
   app: {
     head: {
       title: "MyProject",

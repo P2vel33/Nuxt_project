@@ -3,6 +3,8 @@ useHead({
   title: "Contacts",
   meta: [{ name: "description", content: "Contact page" }],
 });
+
+const mail = useMail();
 const name = ref("");
 const email = ref("");
 const message = ref("");
@@ -25,6 +27,11 @@ const submitForm = async () => {
     resultMessage.value = "Error: " + error.value;
   } else {
     resultMessage.value = "All is success";
+    mail.send({
+      from: `${name.value}`,
+      subject: "Incredible",
+      text: `${message.value}`,
+    });
     name.value = "";
     email.value = "";
     message.value = "";
