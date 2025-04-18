@@ -3,7 +3,7 @@
 <template>
   <div>
     <header class="bg-dark p-3">
-      <ul class="nav">
+      <ul class="nav container">
         <li class="nav-item">
           <nuxt-link to="/" class="nav-link text-white">Main</nuxt-link>
         </li>

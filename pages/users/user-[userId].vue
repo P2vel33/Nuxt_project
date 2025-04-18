@@ -33,20 +33,20 @@ const { data } = await useFetch(`https://dummyjson.com/users/${userId}`);
       <h2>{{ data.firstName }} {{ data.lastName }}</h2>
       <p>ID: {{ data.id }} | Age: {{ data.age }}</p>
 
-      <List unstyled font-size="4">
-        <ListItem><strong>Email:</strong> {{ data.email }} </ListItem>
-        <ListItem><strong>Phone:</strong> {{ data.phone }} </ListItem>
-        <ListItem
+      <ListGroup unstyled font-size="5" flush>
+        <ListGroupItem><strong>Email:</strong> {{ data.email }} </ListGroupItem>
+        <ListGroupItem><strong>Phone:</strong> {{ data.phone }} </ListGroupItem>
+        <ListGroupItem
           ><strong>Address:</strong> {{ data.address.address }},{{
             data.address.city
           }},{{ data.address.state }}
-        </ListItem>
-        <ListItem
+        </ListGroupItem>
+        <ListGroupItem
           ><strong>Company:</strong> {{ data.company.name }} -
           {{ data.company.title }}
           <p>Department: {{ data.company.department }}</p>
-        </ListItem>
-      </List>
+        </ListGroupItem>
+      </ListGroup>
     </Col>
   </Row>
 </template>
