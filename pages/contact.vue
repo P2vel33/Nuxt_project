@@ -4,7 +4,7 @@ useHead({
   meta: [{ name: "description", content: "Contact page" }],
 });
 
-const mail = useMail();
+// const mail = useMail();
 const name = ref("");
 const email = ref("");
 const message = ref("");
@@ -14,7 +14,15 @@ const resultMessage = ref("");
 const submitForm = async () => {
   isSub.value = true;
   resultMessage.value = "";
-
+  const { data } = await useFetch("/api/sendMail", {
+    method: "post",
+    body: {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    },
+  });
+  console.log(data.value);
   const { error } = await useFetch("/api/contacts", {
     method: "post",
     body: {
@@ -27,11 +35,11 @@ const submitForm = async () => {
     resultMessage.value = "Error: " + error.value;
   } else {
     resultMessage.value = "All is success";
-    mail.send({
-      from: `${name.value}`,
-      subject: "Incredible",
-      text: `${message.value}`,
-    });
+    // mail.send({
+    //   from: `${name.value}`,
+    //   subject: "Incredible",
+    //   text: `${message.value}`,
+    // });
     name.value = "";
     email.value = "";
     message.value = "";
