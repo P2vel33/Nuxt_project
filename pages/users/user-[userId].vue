@@ -8,6 +8,10 @@ const { data } = await useFetch(`https://dummyjson.com/users/${userId}`);
 </script>
 
 <template>
+  <Head>
+    <Title>User ID: {{ userId }}</Title>
+    <Meta name="description" content="User ID"></Meta>
+  </Head>
   <h1 class="text-danger mb-4">ID of user: {{ userId }}</h1>
   <Row align-items="center" justify-content="center" gutter="x-3">
     <Col col="md-5">

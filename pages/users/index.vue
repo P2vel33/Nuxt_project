@@ -15,6 +15,10 @@ const users = ref(data.value.users);
 
 <template>
   <div>
+    <Head>
+      <Title>All users from website</Title>
+      <Meta name="description" content="All users from website"></Meta>
+    </Head>
     <h1>All users</h1>
     <ul class="d-flex justify-content-between flex-wrap list-unstyled gap-3">
       <li v-for="user in users" :key="user.id">

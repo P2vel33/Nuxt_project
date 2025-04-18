@@ -12,7 +12,7 @@ const { user } = defineProps(["user"]);
       </p>
       <p><strong>Email:</strong> {{ user.email }}</p>
       <nuxt-link :to="`/users/user-${user.id}`" class="btn btn-primary"
-        >{{ user.firstName }} {{ user.lastName }}</nuxt-link
+        >View profile</nuxt-link
       >
     </div>
   </div>
